@@ -1,0 +1,41 @@
+# 3AB-Decision Tree examples and usage
+
+- Introduction to the sklearn template
+- Work with iris data and cars/cancer data
+- Start with preparing data for usage
+	- Tidy data
+- Use sklearn.DecisionTreeClassifier
+- Use sklearn.DecisionTreeRegressor
+- Show how you would implement a training-test split
+	- using sklearn.model_selection.train_test_split
+	- Get predictions
+	- Obtain prediction error
+- Implement cross-validation
+	- sklearn.model_selection.cross_val_score
+	- Do a first principles implementation as well
+- Visualize decision surfaces
+	- How is the feature space partitioned by the tree
+	- Visualize improvement in error rates
+	- Visualize the variability in partition even with small changes in the data
+- Tree representation using graphviz
+- Exercises
+	- Implement for a larger data set
+	- Create some dummy data sets that highlight pros and cons
+		- Curvilinear relationships
+		- Change points
+- Interactions and decision trees
+	- Can model complex relationships
+	- Compare with linear regression or logistic regression models
+- Advantages of decision trees in binary response data
+	- Automatic probability estimation
+	- Assess marginal relationships
+- Other kinds of models
+	- Count data
+- Extensions of decision trees
+	- CHAID (via chaid package)
+	- ctree (via R)
+- Comparing different tree methods
+	- CART is by far the most implemented
+	- CART only allows binary splits
+	- C5.0 and CHAID allow for multiple splits
+	- Demonstrate different level surfaces from the different methods

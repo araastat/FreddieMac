@@ -1,0 +1,48 @@
+# 2A- Decision Tree Introduction
+
+- What is a decision tree?
+	- Supervised learning method
+		- Labelled data
+	- Uses features/predictors to partition feature space so that
+		- within each subspace the labeled data is homogeneous
+		- Different subgroups are as different as possible
+	- Sounds like clustering but isn’t
+		- In clustering we want the groups specified by the variables to be homogeneous
+		- In decision trees we want the __labels__ to be homogeneous, even though the subspaces are created by the predictors
+	- Typically proceeds by binary split (demo in next section)
+	- It is a greedy algorithm
+		- Searches through all predictors and all their possible values to find best split at each stage
+		- Can keep going until each group has only one observation (bad idea)
+	- Example
+		- Iris data
+		- Show dendrogram/graph
+	- What is the basic idea
+		- Create local regions where we can predict the label with accuracy
+		- Use binary splits 
+			- Rectangular subspaces
+	- Criteria for splitting
+		- For classification
+			- Gini index (CART)
+			- Chi-square statistic (CHAID)
+			- Entropy (C5.0)
+		- For regression
+			- Mean square error or variance (CART)
+	- What is the prediction from a decision tree?
+		- For classification
+			- Majority vote within the subgroup where the datum falls
+		- For regression
+			- The average of the labels in the subgroup where the datum falls
+	- What are the issues
+		- Typically have low bias but high variability
+		- Repeating with close data can get you a very different decision tree
+		- Going too deep or allowing subgroups to get too small can lead to instability
+	- Main tuning parameters
+		- How deep to grow the tree?
+		- How many observations need to be in a terminal node (subgroup)?
+		- How many observations need to be in a subgroup to allow it to split?
+	- Pruning a tree
+		- This is basically done either by dictat (specifying depth of tree) or by cross-validation
+		- Often it is most robust not to choose the “best” tree but the close to best tree
+			- This is because of overfitting
+			- “best” is optimal for training data, but may overfit the training data, and does poorly in test data
+		- Show graph of training vs test error
